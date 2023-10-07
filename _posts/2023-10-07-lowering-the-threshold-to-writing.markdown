@@ -30,14 +30,9 @@ Should be simple enough, and anything that can be automated should be automated.
 ```json
 (
 	"New Jekyll Post": (
-"prefix": ["post"],
-"body": "---
-date: 2023-10-07 14:44:48 +0200
----
-
-
-\n\n",
-		"description": "Create new jekyll Post",
+	"prefix": ["post"],
+	"body":  "---\nlayout: post\ntitle: $(1:title)\ndate:\ncategories: [$(2:categories)]\n---\n\n",
+	"description": "Create new jekyll Post",
 	)
 )
 ```
