@@ -1,0 +1,9 @@
+repos:
+- repo: local
+  hooks:
+  - id: set-publish-date
+    name: Set Publish Date
+    description: Add publish date to content and name of new posts
+    entry: scripts/set_publishing_date.py
+    language: python
+    types: [file]
