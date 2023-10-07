@@ -20,7 +20,11 @@ Writing a template seems simple enough, so I might as well write my own using th
 Should be simple enough, and anything that can be automated should be automated. It is not like anyone ever spent more time on automating a task than just performing the task.
 
 ![['Automating' comes from the roots 'auto-' meaning 'self-', and 'mating', meaning 'screwing'](https: //xkcd.com/1319/)](https://imgs.xkcd.com/comics/automation.png)
-- date
+
+In the end I created four files to set up the workflow:
+1. A "snippet" file that lets me quickly add the type of metadata expected by jekyll. Now I just have to remember to press **^SPACE** when I want to use it ... should probably set up more such snippets for Python to speed up the boilerplate stuff.
+2. A short Python file that makes sure that all the metadata is entered and formatted correctly. There are parts in there that are hardcoded for now, might take a closer look at them at them. At some point. Perhaps. It also changes the filename (if necessary), and then tries to record this change with git (have not tested this enough yet), the formatting expected by Jekyll, as far as I can tell is:
+  - date
   - hyphen
   - lowercase title with whitespaces replaced by hyphens
 3. A really tiny Python file that reformats all posts without dates in their filenames, in part so that I can quickly run the formatter without having to run pre-commit in part because I want to be prepared to reformat all posts in the future should the need arise.
