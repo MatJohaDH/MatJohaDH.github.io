@@ -14,20 +14,15 @@ date, time = datetime.isoformat(datetime.now(), timespec="seconds").split("T")
 
 
 def meta_to_dict(meta):
-    print(meta)
     meta_dict = {
         key.strip(): whites.sub(" ", item.strip())
         for key, item in meta_extractor.findall(meta)
     }
 
-    print(meta_dict)
-
-    print(meta_dict["categories"])
     meta_dict["categories"] = [
         category.strip()
         for category in re.sub(r"[\[\]]", "", meta_dict["categories"]).split(",")
     ]
-    print(meta_dict["categories"])
 
     with open("log.txt", "a+") as f:
         f.write(str(meta_dict))
@@ -66,8 +61,6 @@ def format_post(file):
 
     post = post_metadata.sub(new_meta, post)
 
-    print(post)
-
     with open(file, "w", encoding="utf8") as f:
         f.write(post)
 
@@ -75,7 +68,7 @@ def format_post(file):
     new_file_name = date + "-" + title + ".markdown"
     new_file_path = os.path.join(post_dir, new_file_name.lower())
 
-    os.rename(file, new_file_path)
+    os.popen(f"git mv {file}, {new_file_path}")
 
 
 for file in sys.argv:
