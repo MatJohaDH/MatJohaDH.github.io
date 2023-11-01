@@ -112,3 +112,5 @@ The GUI is surprisingly pretty for how little time I put into it, and much
 prettier than my needs necessitate. I will keep tinkering with it as I use it,
 and I already have several ideas of how it could be improved -- but this will
 have to do for today.
+
+![GUI of Textual-based Freewriting application ](/assets/images/2023-11-01_TextualFreewrite.png)
